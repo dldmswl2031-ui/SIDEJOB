@@ -1,14 +1,231 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>Gloweasy - 외국인을 위한 뷰티 예약</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+  <div class="bg-grid"></div>
+
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <div>
+          <p class="brand-name">Gloweasy</p>
+          <p class="brand-tag" data-i18n="brand.tag">Beauty concierge for travelers</p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <button class="ghost" data-i18n="nav.about">서비스 안내</button>
+        <button class="ghost" data-i18n="nav.partners">파트너 미용실</button>
+        <div class="lang-select">
+          <span data-i18n="nav.language">언어</span>
+          <select id="language">
+            <option value="ko">한국어</option>
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">FOREIGNER FRIENDLY BOOKING</p>
+        <h1 data-i18n="hero.title">여행 중에도, 원하는 스타일 그대로.</h1>
+        <p class="lead" data-i18n="hero.lead">
+          지역과 일정, 원하는 이미지 한 장이면 끝. 외국인이 자주 찾는 검증된 미용실을 추천하고
+          예약까지 한 번에 연결합니다.
+        </p>
+        <div class="hero-metrics">
+          <div>
+            <p class="metric">1,240+</p>
+            <p class="metric-label" data-i18n="metric.salons">검증 미용실</p>
+          </div>
+          <div>
+            <p class="metric">42개국</p>
+            <p class="metric-label" data-i18n="metric.languages">지원 언어</p>
+          </div>
+          <div>
+            <p class="metric">4.86/5</p>
+            <p class="metric-label" data-i18n="metric.rating">만족도</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-header">
+          <h2 data-i18n="form.title">빠른 추천 받기</h2>
+          <p data-i18n="form.subtitle">입력 즉시 주변 베스트 살롱을 추천합니다.</p>
+        </div>
+        <form id="booking-form" class="form">
+          <label>
+            <span data-i18n="form.region">지역</span>
+            <div class="field-row">
+              <select id="region" required>
+                <option value="" data-i18n="form.regionPlaceholder">지역 선택</option>
+                <option value="seoul" data-i18n="region.seoul">서울</option>
+                <option value="busan" data-i18n="region.busan">부산</option>
+                <option value="jeju" data-i18n="region.jeju">제주</option>
+                <option value="daegu" data-i18n="region.daegu">대구</option>
+              </select>
+              <input id="neighborhood" type="text" data-i18n-placeholder="form.neighborhood" placeholder="상세 위치 (예: 홍대)" />
+            </div>
+          </label>
+          <label>
+            <span data-i18n="form.date">날짜</span>
+            <input id="date" type="date" required />
+          </label>
+          <label>
+            <span data-i18n="form.time">시간</span>
+            <input id="time" type="time" required />
+          </label>
+          <label>
+            <span data-i18n="form.service">서비스 유형</span>
+            <div class="chips" id="service-type">
+              <button type="button" class="chip active" data-value="cut" data-i18n="service.cut">커트</button>
+              <button type="button" class="chip" data-value="color" data-i18n="service.color">염색</button>
+              <button type="button" class="chip" data-value="perm" data-i18n="service.perm">펌</button>
+              <button type="button" class="chip" data-value="spa" data-i18n="service.spa">헤드스파</button>
+              <button type="button" class="chip" data-value="makeup" data-i18n="service.makeup">메이크업</button>
+            </div>
+          </label>
+          <label>
+            <span data-i18n="form.image">원하는 스타일 이미지</span>
+            <div class="upload">
+              <input id="style-image" type="file" accept="image/*" />
+              <div class="upload-preview" id="image-preview">
+                <p data-i18n="form.imagePlaceholder">이미지 미리보기</p>
+              </div>
+            </div>
+          </label>
+          <label>
+            <span data-i18n="form.notes">요청사항</span>
+            <textarea id="notes" rows="3" data-i18n-placeholder="form.notesPlaceholder" placeholder="언어 지원, 알레르기, 선호 스타일 등을 적어주세요."></textarea>
+          </label>
+          <button class="primary" type="submit" data-i18n="form.submit">추천 받기</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="results" id="results">
+      <div class="section-title">
+        <h2 data-i18n="results.title">추천 미용실</h2>
+        <p data-i18n="results.subtitle">입력한 일정과 이미지에 가장 가까운 미용실을 선별했습니다.</p>
+      </div>
+      <div class="results-grid" id="results-grid">
+        <div class="placeholder">
+          <h3 data-i18n="results.placeholderTitle">추천 결과가 여기에 표시됩니다.</h3>
+          <p data-i18n="results.placeholderBody">지역과 일정 입력 후 추천 받기를 눌러주세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="steps">
+      <div class="section-title">
+        <h2 data-i18n="steps.title">예약 과정</h2>
+        <p data-i18n="steps.subtitle">외국인도 쉽게 예약할 수 있도록 번역과 결제까지 연결합니다.</p>
+      </div>
+      <div class="steps-grid">
+        <article>
+          <span>01</span>
+          <h3 data-i18n="steps.one">입력</h3>
+          <p data-i18n="steps.oneBody">지역, 날짜, 시간, 이미지를 입력합니다.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3 data-i18n="steps.two">추천</h3>
+          <p data-i18n="steps.twoBody">리뷰와 외국인 만족도를 기준으로 선별합니다.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3 data-i18n="steps.three">예약</h3>
+          <p data-i18n="steps.threeBody">다국어 컨시어지가 예약을 확정합니다.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="booking-modal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="close" id="close-modal" data-i18n="modal.close">닫기</button>
+      <div class="modal-step is-active" data-step="1">
+        <h3 data-i18n="modal.title">예약 확인</h3>
+        <p id="modal-summary"></p>
+        <div class="modal-actions">
+          <button class="ghost" id="cancel-booking" data-i18n="modal.cancel">취소</button>
+          <button class="primary" id="confirm-booking" data-i18n="modal.next">예약 진행</button>
+        </div>
+      </div>
+      <div class="modal-step" data-step="2">
+        <h3 data-i18n="payment.title">결제 정보</h3>
+        <p class="modal-desc" data-i18n="payment.desc">보증금을 결제하면 예약이 확정됩니다.</p>
+        <form id="payment-form" class="form compact">
+          <label>
+            <span data-i18n="payment.name">이름</span>
+            <input id="payment-name" type="text" required />
+          </label>
+          <label>
+            <span data-i18n="payment.email">이메일</span>
+            <input id="payment-email" type="email" required />
+          </label>
+          <label>
+            <span data-i18n="payment.phone">연락처</span>
+            <input id="payment-phone" type="tel" required />
+          </label>
+          <label>
+            <span data-i18n="payment.card">카드 끝 4자리</span>
+            <input id="payment-card" type="text" maxlength="4" required />
+          </label>
+          <label class="checkbox">
+            <input id="payment-policy" type="checkbox" required />
+            <span data-i18n="payment.policy">취소 정책에 동의합니다.</span>
+          </label>
+          <div class="price-line">
+            <span data-i18n="payment.deposit">예약 보증금</span>
+            <strong id="deposit-amount">₩20,000</strong>
+          </div>
+        </form>
+        <div class="modal-actions">
+          <button class="ghost" id="back-to-confirm" data-i18n="modal.back">뒤로</button>
+          <button class="primary" id="pay-now" data-i18n="payment.pay">보증금 결제</button>
+        </div>
+      </div>
+      <div class="modal-step" data-step="3">
+        <h3 data-i18n="success.title">예약 완료</h3>
+        <p id="success-message"></p>
+        <div class="confirm-panel">
+          <p class="modal-desc" data-i18n="success.desc">확정 안내를 이메일과 문자로 전송합니다.</p>
+          <div class="confirm-status">
+            <span data-i18n="success.email">이메일</span>
+            <strong id="email-status">-</strong>
+          </div>
+          <div class="confirm-status">
+            <span data-i18n="success.sms">문자</span>
+            <strong id="sms-status">-</strong>
+          </div>
+          <div class="confirm-actions">
+            <button class="ghost" id="resend-email" data-i18n="success.resendEmail">이메일 재전송</button>
+            <button class="ghost" id="resend-sms" data-i18n="success.resendSms">문자 재전송</button>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="primary" id="finish-booking" data-i18n="success.done">완료</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="/main.js"></script>
 </body>
 </html>
