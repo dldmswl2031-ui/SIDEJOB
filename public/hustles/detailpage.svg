@@ -1,0 +1,17 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g5" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3EBFF"/>
+      <stop offset="1" stop-color="#DCC8FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#g5)"/>
+  <rect x="120" y="70" width="400" height="280" rx="18" fill="#FFFFFF"/>
+  <rect x="150" y="108" width="170" height="170" rx="12" fill="#E6D7FF"/>
+  <rect x="340" y="110" width="150" height="22" rx="8" fill="#CAB0F7"/>
+  <rect x="340" y="146" width="125" height="16" rx="8" fill="#E1D2FA"/>
+  <rect x="340" y="176" width="125" height="16" rx="8" fill="#E1D2FA"/>
+  <rect x="340" y="206" width="125" height="16" rx="8" fill="#E1D2FA"/>
+  <rect x="340" y="252" width="132" height="28" rx="10" fill="#9B75E8"/>
+  <text x="320" y="360" text-anchor="middle" fill="#5A33A8" font-size="30" font-family="Arial, sans-serif" font-weight="700">DETAIL PAGE LAB</text>
+</svg>

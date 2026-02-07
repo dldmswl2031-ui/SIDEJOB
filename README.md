@@ -57,7 +57,7 @@ Collections:
 ## Notes / TODO
 - Add Storage upload for reference photos.
 - Add admin role claims for stricter security.
-- Add payment integration when ready.
+- Manual payment tracking only (paid/unpaid). No billing required.
 
 ## Deployment (Firebase Hosting)
 Use Firebase frameworks integration:

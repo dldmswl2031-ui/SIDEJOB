@@ -1,0 +1,17 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g2" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8F3FF"/>
+      <stop offset="1" stop-color="#CBE5FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#g2)"/>
+  <rect x="120" y="180" width="370" height="110" rx="18" fill="#2B7DE9"/>
+  <circle cx="210" cy="318" r="34" fill="#1B4F96"/>
+  <circle cx="420" cy="318" r="34" fill="#1B4F96"/>
+  <rect x="360" y="136" width="120" height="52" rx="10" fill="#4EA0FF"/>
+  <rect x="146" y="212" width="70" height="24" rx="6" fill="#E8F3FF"/>
+  <rect x="234" y="212" width="70" height="24" rx="6" fill="#E8F3FF"/>
+  <rect x="322" y="212" width="70" height="24" rx="6" fill="#E8F3FF"/>
+  <text x="320" y="360" text-anchor="middle" fill="#113A73" font-size="30" font-family="Arial, sans-serif" font-weight="700">DELIVERY MODE</text>
+</svg>

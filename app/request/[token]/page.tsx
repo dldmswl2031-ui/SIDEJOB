@@ -61,6 +61,7 @@ export default function RequestDetailPage({ params }: { params: { token: string 
             <div>Date: {request.guest.date}</div>
             <div>Time: {request.guest.timePref}</div>
             <div>Style: {request.guest.styleText}</div>
+            <div>Payment status: {request.paymentStatus ?? "unpaid"}</div>
             {request.guest.refUrl && <div>Reference: {request.guest.refUrl}</div>}
             {request.guest.constraints.length > 0 && (
               <div>Notes: {request.guest.constraints.join(", ")}</div>

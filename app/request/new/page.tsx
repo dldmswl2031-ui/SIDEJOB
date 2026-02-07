@@ -64,6 +64,7 @@ export default function RequestNewPage() {
         token,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp(),
+        paymentStatus: "unpaid",
         guest: {
           city: "Seoul",
           district,

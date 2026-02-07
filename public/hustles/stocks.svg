@@ -1,0 +1,13 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E6FFF0"/>
+      <stop offset="1" stop-color="#C8F8DE"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#g4)"/>
+  <rect x="110" y="82" width="420" height="250" rx="18" fill="#F4FFF8"/>
+  <path d="M145 284L215 246L260 260L332 202L394 218L488 142" stroke="#179B57" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="488" cy="142" r="12" fill="#179B57"/>
+  <text x="320" y="360" text-anchor="middle" fill="#0E6B3B" font-size="30" font-family="Arial, sans-serif" font-weight="700">STOCKS ONLY?</text>
+</svg>

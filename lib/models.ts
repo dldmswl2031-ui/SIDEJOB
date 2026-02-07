@@ -24,6 +24,7 @@ export type RequestDoc = {
   token: string;
   createdAt: unknown;
   updatedAt: unknown;
+  paymentStatus?: "unpaid" | "paid";
   guest: {
     city: "Seoul";
     district: string;

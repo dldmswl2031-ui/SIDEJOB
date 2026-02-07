@@ -1,0 +1,14 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="640" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8DD"/>
+      <stop offset="1" stop-color="#FFEFA7"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#g3)"/>
+  <circle cx="320" cy="205" r="120" fill="#FFD84D"/>
+  <circle cx="275" cy="180" r="16" fill="#5A3E00"/>
+  <circle cx="365" cy="180" r="16" fill="#5A3E00"/>
+  <path d="M255 238C273 265 302 278 320 278C338 278 367 265 385 238" stroke="#5A3E00" stroke-width="14" stroke-linecap="round"/>
+  <text x="320" y="360" text-anchor="middle" fill="#6E5200" font-size="30" font-family="Arial, sans-serif" font-weight="700">EMOTICON CREW</text>
+</svg>

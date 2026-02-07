@@ -12,11 +12,14 @@
   },
   "dependencies": {
     "firebase": "latest",
+    "html-to-image": "^1.11.13",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/react": "19.2.13",
     "autoprefixer": "latest",
     "postcss": "latest",
     "tailwindcss": "latest",

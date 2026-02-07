@@ -34,6 +34,7 @@ export default function AdminRequestDetailPage({ params }: { params: { id: strin
   const [guestMessage, setGuestMessage] = useState("");
   const [internalMemo, setInternalMemo] = useState("");
   const [status, setStatus] = useState<RequestStatus>("Submitted");
+  const [paymentStatus, setPaymentStatus] = useState<"unpaid" | "paid">("unpaid");
   const [offers, setOffers] = useState<Offer[]>([emptyOffer(1), emptyOffer(2), emptyOffer(3)]);
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export default function AdminRequestDetailPage({ params }: { params: { id: strin
         setGuestMessage(data.guestMessage ?? "");
         setInternalMemo(data.admin.internalMemo ?? "");
         setStatus(data.status);
+        setPaymentStatus(data.paymentStatus ?? "unpaid");
         const seeded = [1, 2, 3].map((rank) => data.offers.find((o) => o.rank === rank) || emptyOffer(rank as 1 | 2 | 3));
         setOffers(seeded);
       }
@@ -65,6 +67,7 @@ export default function AdminRequestDetailPage({ params }: { params: { id: strin
     try {
       await updateDoc(doc(db, "requests", params.id), {
         status,
+        paymentStatus,
         offers: offers.filter((offer) => offer.shopId || offer.title || offer.rationale),
         guestMessage,
         admin: {
@@ -112,6 +115,14 @@ export default function AdminRequestDetailPage({ params }: { params: { id: strin
                   {item}
                 </option>
               ))}
+            </select>
+          </label>
+
+          <label style={{ display: "grid", gap: 6 }}>
+            Payment status
+            <select value={paymentStatus} onChange={(e) => setPaymentStatus(e.target.value as "unpaid" | "paid")}>
+              <option value="unpaid">unpaid</option>
+              <option value="paid">paid</option>
             </select>
           </label>
 
